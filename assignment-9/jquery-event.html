@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vectacorp/node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('button').click(function () {
+                window.alert("Button has been clicked");
+            });
+            $('button').bind('click', function() {
+                window.alert("Button has been clicked by Bind method");
+            });
+            $('button').on('click', function() {
+                window.alert("Button has been clicked by ON method");
+            });
+            $('body').on({
+                click: function() {
+                window.alert("Button has been clicked by ON method");
+                    }
+                }, 'button');
+            
+            $("div").css("width", "200px").css("height", "200px").css("background", "blue");
+
+            $('body').on('mounseenter mouseleave', 'div', function() {
+                window.alert("The div was either clicked on, the mouse entered it or left it!");
+            });
+
+            $("span").css("width", "200px").css("height", "200px").css("background", "grey");
+
+            $('body').on({
+                mouseenter: function () {
+                    window.alert("mouse entered span!");
+                },
+                mouseleave: function () {
+                    window.alert("mouse left span!");
+                },
+                click: function () {
+                    window.alert("mouse clicked span!");
+                }
+            }, 'span');
+
+            $('a').click(function(event) {
+                event.preventDefault();
+
+            $('a').css('color','red');
+                window.alert(event.target.nodeName + ' triggered the event.');
+            });
+
+            $(window).resize(function() {
+                $('div').text($(window).width());
+            });
+
+            $("input").on({
+                focus: function() {
+                $(this).css("background", "#EDEDED");
+                },
+                blur: function() {
+                    $(this).css("background", "white");
+                }
+            });
+
+            $("body").on({
+            submit: function(event) {
+                event.preventDefault();
+                if ($("#name").val().length > 0) {
+                    $("#name").css("border", "1px solid green");
+                } else {
+                    $("#name").css("border", "1px solid red");
+                    window.alert("Name is a required field!");
+                }
+                if ($("#email").val().length > 0) {
+                    $("#email").css("border", "1px solid green");
+                } else {
+                    $("#email").css("border", "1px solid red");
+                    window.alert("Email is a required field!");
+                }
+            }
+            }, "form");
+        });
+    </script>  
+    <title>Jquery events</title>
+</head>
+<body>
+    <button id="mybutton1">Click me button1!</button><br>
+    <button id="mybutton2">Click me button2!!</button><br><br>
+    <div>
+        div
+    </div><br><br>
+    <span>
+        handling different messages!
+    </span><br><br>
+    <a href="http://www.modulemedia.com"> ModuleMedia</a><br><br>
+    <input type="text" id="text">text<br><br>
+    <form>
+        <input type="text" id="name"> Name <br>
+        <input type="text" id="email"> Email <br>
+        <input type="submit" value="submit"> 
+    </form>
+</body>
+</html>
