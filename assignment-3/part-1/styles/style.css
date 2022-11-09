@@ -1,0 +1,52 @@
+
+/* Using a type selector, set the font of the web page to Arial, Helvetica, sans-serif and size it to 1em. Line height should be adjusted to 2em. Change the background color of the web page to #EDEDED.*/
+body { 
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 1em; 
+    line-height: 2em; 
+    background-color: #EDEDED;}
+
+/* Using a type selector, stylize all of the headings. You should change their color and add a 1px #929CA4 border underneath the heading that stretches the length of the web page.*/
+h3 { 
+    color: red; 
+    border-bottom: 1px solid #929CA4;
+}
+
+/* Using descendent pseudo-element selectors, select the first letter of the first paragraph and make it 30px. Remember, you will need to select the first paragraph element in the web page and then select the first letter in that paragraph. There are two pseudo-class selectors that you’ll need to use.*/
+p:first-of-type::first-letter { 
+    font-size: 30px;
+}
+
+/* Create a class named “solution”. Stylize this class so that the text is #CC1C0D and the font weight should be bolded. Apply this class to each solution title within the “Our Solutions” section.*/
+.solution { 
+    text-decoration-color: #CC1C0D ; 
+    font-weight: bold;
+}
+
+/* Uniquely ID each of the two client testimonials. Call the first one testimonial1 and the second one testimonial2. Using a multiple element selector, stylize both paragraphs to be italicized and indented in about 50px. Use the margin property here to accomplish this task.*/
+#testimonial1, #testimonial2 { 
+    font-style: italic ; 
+    margin-left: 50px;
+}
+
+/* Link the Dorknozzle text to http://www.dorknozzle.com. Then, using an attribute selector, select the <a> element by its href attribute, but only if it has the “http” prefix associated with it. If it does, use the 4 pseudo classes to set the unvisited, visited, active, and hover states to different colors and text decorations.
+*/
+a[href^='http']:link        { color: purple; text-decoration:underline;}
+a[href^='http']:active      { color: yellow; text-decoration: dashed;}
+a[href^='http']:visited     { color: blue;text-decoration: none;}
+a[href^="http"]:hover       { color: red;text-decoration: solid;}
+
+/* Using a type selector, remove the bullets from the list in the management team.*/
+ul{ 
+    list-style-type: none; 
+}
+
+/* Using a pseudo-class selector, select the first item in the management team list and make it blue.*/
+ul li:first-of-type {
+     color:blue;
+    }
+
+/* Using a pseudo-class selector, select the last item in the management team list and make it red.*/
+ul li:last-of-type {
+     color: red;
+    }
