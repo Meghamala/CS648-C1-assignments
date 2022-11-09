@@ -1,0 +1,96 @@
+
+.grid-container {
+    font-family:sans-serif;
+    width: 960px;
+    min-height: 900px;
+    margin: 25px auto;
+    display: grid;
+    grid-template-rows: 80px 320px 50px repeat(2, 1fr) 50px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    align-self: auto;
+}
+
+.logo, .item-container, section, footer {
+    background-color: silver;
+}
+
+header, .section1, footer{
+    grid-column: 1/5;
+    display: grid;
+  } 
+
+header {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.logo {
+    grid-column: 1/2;
+}
+
+.item-container {
+    height: 40px;
+    grid-column: 3/5;
+    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.item-container nav {
+    align-self: center;
+    justify-self: center;
+}
+
+.section1 {
+    grid-row: 2/3;
+    height:85%;
+    align-self: center;
+    justify-self: center;
+    padding: 30px 40px 10px 40px;
+}
+
+.section2 {
+    grid-row: 3/4;
+    grid-column: 1/span 1;
+}
+
+.section3{
+    grid-row: 3/4;
+    grid-column: 3/span 1;
+}
+
+.section4{
+    grid-row: 4/5;
+    grid-column: 1/span 2;
+}
+
+.section5{
+    grid-row: 4/5;
+    grid-column: 3/span 1;
+}
+
+.section6{
+    grid-row: 4/5;
+    grid-column: 4/span 1;
+}
+
+.section7{
+    grid-row: 5/6;
+    grid-column: 1/span 2;
+}
+
+.section8{
+    grid-row: 5/6;
+    grid-column: 3/span 1;
+}
+
+.section9{
+    grid-row: 5/6;
+    grid-column: 4/span 1;
+}
+
+footer {
+    align-items: center;
+    justify-items: center;
+  }
